@@ -26,6 +26,14 @@ export {
   type CodexProviderConfig,
 } from "./codex.js";
 
+// GitHub Copilot provider (uses codex app-server with GitHub auth)
+import { githubCopilotProvider } from "./github-copilot.js";
+export {
+  GitHubCopilotProvider,
+  githubCopilotProvider,
+  type GitHubCopilotProviderConfig,
+} from "./github-copilot.js";
+
 // Gemini provider (uses gemini CLI)
 import { geminiProvider } from "./gemini.js";
 export {
@@ -75,6 +83,7 @@ export function getAllProviders(): AgentProvider[] {
     claudeOllamaProvider,
     codexProvider,
     codexOSSProvider,
+    githubCopilotProvider,
     geminiProvider,
     geminiACPProvider,
     opencodeProvider,
@@ -98,6 +107,8 @@ export function getProvider(name: ProviderName): AgentProvider | null {
       return codexProvider;
     case "codex-oss":
       return codexOSSProvider;
+    case "github-copilot":
+      return githubCopilotProvider;
     case "gemini":
     case "gemini-acp":
       // Both map to ACP provider - "gemini" is legacy name for backward compatibility

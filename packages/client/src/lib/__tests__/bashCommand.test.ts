@@ -59,5 +59,8 @@ describe("bashCommand", () => {
     expect(isCodexLikeBashInput({ command: "npm run lint" }, "codex-oss")).toBe(
       true,
     );
+    expect(
+      isCodexLikeBashInput({ command: "npm run lint" }, "github-copilot"),
+    ).toBe(true);
   });
 });

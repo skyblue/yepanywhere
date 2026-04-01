@@ -58,7 +58,9 @@ const DEFAULT_STALE_IN_TURN_THRESHOLD_MS = 5 * 60 * 1000;
 const CODEX_STALE_IN_TURN_THRESHOLD_MS = 60 * 60 * 1000;
 
 function getStaleInTurnThresholdMs(provider: ProviderName): number {
-  return provider === "codex" || provider === "codex-oss"
+  return provider === "codex" ||
+    provider === "codex-oss" ||
+    provider === "github-copilot"
     ? CODEX_STALE_IN_TURN_THRESHOLD_MS
     : DEFAULT_STALE_IN_TURN_THRESHOLD_MS;
 }

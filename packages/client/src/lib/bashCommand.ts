@@ -138,7 +138,11 @@ export function getDisplayBashCommandFromInput(input: unknown): string {
 }
 
 export function isCodexProvider(provider?: string): boolean {
-  return provider === "codex" || provider === "codex-oss";
+  return (
+    provider === "codex" ||
+    provider === "codex-oss" ||
+    provider === "github-copilot"
+  );
 }
 
 export function isCodexLikeBashInput(

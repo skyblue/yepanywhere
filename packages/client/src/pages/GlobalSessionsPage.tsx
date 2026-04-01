@@ -31,6 +31,7 @@ const PROVIDER_COLORS: Record<ProviderName, string> = {
   "claude-ollama": "var(--app-yep-green)", // Same as Claude
   codex: "#10a37f",
   "codex-oss": "#f97316",
+  "github-copilot": "#16a34a",
   gemini: "#4285f4",
   "gemini-acp": "#4285f4", // Same as gemini
   opencode: "#9333ea", // Purple for OpenCode

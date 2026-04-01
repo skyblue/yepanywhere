@@ -3,6 +3,7 @@
  * - "claude": Claude via Anthropic SDK
  * - "codex": OpenAI Codex via SDK (cloud models)
  * - "codex-oss": Codex via CLI with --oss (local models via Ollama)
+ * - "github-copilot": GitHub Copilot CLI (Codex-compatible agent harness)
  * - "gemini": Google Gemini via CLI
  * - "opencode": OpenCode via HTTP server (multi-provider agent)
  */
@@ -11,6 +12,7 @@ export type ProviderName =
   | "claude-ollama"
   | "codex"
   | "codex-oss"
+  | "github-copilot"
   | "gemini"
   | "gemini-acp"
   | "opencode";
@@ -25,6 +27,7 @@ export const ALL_PROVIDERS: readonly ProviderName[] = [
   "claude-ollama",
   "codex",
   "codex-oss",
+  "github-copilot",
   "gemini",
   "gemini-acp",
   "opencode",

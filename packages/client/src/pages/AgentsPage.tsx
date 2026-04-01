@@ -78,6 +78,7 @@ function getProviderLabel(
     case "claude":
       return "Claude";
     case "codex":
+    case "github-copilot":
       return "Codex";
     case "gemini":
       return "Gemini";
@@ -94,6 +95,7 @@ function getProviderLabel(
 function getProviderBadgeClass(provider: string | undefined): string {
   switch (provider) {
     case "codex":
+    case "github-copilot":
       return "agent-provider-codex";
     case "gemini":
       return "agent-provider-gemini";

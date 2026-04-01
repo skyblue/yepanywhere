@@ -15,6 +15,7 @@ export type ProviderName =
   | "claude-ollama"
   | "codex"
   | "codex-oss"
+  | "github-copilot"
   | "gemini"
   | "gemini-acp"
   | "opencode";

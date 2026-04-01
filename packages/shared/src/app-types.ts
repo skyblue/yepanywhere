@@ -243,7 +243,7 @@ export function getModelContextWindow(
   provider?: ProviderName,
 ): number {
   if (!model) {
-    return provider === "codex"
+    return provider === "codex" || provider === "github-copilot"
       ? CODEX_DEFAULT_CONTEXT_WINDOW
       : DEFAULT_CONTEXT_WINDOW;
   }
@@ -278,7 +278,7 @@ export function getModelContextWindow(
   }
 
   // Provider-level fallback when we don't recognize the model string.
-  if (provider === "codex") {
+  if (provider === "codex" || provider === "github-copilot") {
     return CODEX_DEFAULT_CONTEXT_WINDOW;
   }
 

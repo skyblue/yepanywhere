@@ -234,6 +234,8 @@ export function ProcessInfoModal({
         return "Codex (OpenAI)";
       case "codex-oss":
         return "Codex OSS (Local)";
+      case "github-copilot":
+        return "GitHub Copilot";
       case "gemini":
         return "Gemini (Google)";
       case "opencode":

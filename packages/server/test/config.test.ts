@@ -36,3 +36,23 @@ describe("loadConfig codex paths", () => {
     );
   });
 });
+
+describe("loadConfig enabled providers", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
+
+  it("parses github-copilot in ENABLED_PROVIDERS", async () => {
+    vi.stubEnv("ENABLED_PROVIDERS", "claude,github-copilot,codex");
+
+    const { loadConfig } = await import("../src/config.js");
+    const config = loadConfig();
+
+    expect(config.enabledProviders).toEqual([
+      "claude",
+      "github-copilot",
+      "codex",
+    ]);
+  });
+});

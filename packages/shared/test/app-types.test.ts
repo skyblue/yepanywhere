@@ -16,6 +16,12 @@ describe("getModelContextWindow", () => {
     );
   });
 
+  it("uses codex fallback when provider is github-copilot and model is missing", () => {
+    expect(getModelContextWindow(undefined, "github-copilot")).toBe(
+      CODEX_DEFAULT_CONTEXT_WINDOW,
+    );
+  });
+
   it("detects codex and gpt-5 models as 258K", () => {
     expect(getModelContextWindow("codex-5.3")).toBe(
       CODEX_DEFAULT_CONTEXT_WINDOW,

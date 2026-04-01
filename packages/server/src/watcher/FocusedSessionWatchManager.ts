@@ -415,6 +415,7 @@ export class FocusedSessionWatchManager {
   ): WatchProvider | null {
     if (!provider) return null;
     if (provider === "codex" || provider === "codex-oss") return "codex";
+    if (provider === "github-copilot") return "codex";
     if (provider === "gemini" || provider === "gemini-acp") return "gemini";
     if (provider === "claude" || provider === "opencode") return "claude";
     return null;

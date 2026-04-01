@@ -40,7 +40,13 @@ function normalizeProviderGroup(
   provider: ProviderName | string | undefined,
 ): ProviderGroup | null {
   if (!provider) return null;
-  if (provider === "codex" || provider === "codex-oss") return "codex";
+  if (
+    provider === "codex" ||
+    provider === "codex-oss" ||
+    provider === "github-copilot"
+  ) {
+    return "codex";
+  }
   if (provider === "gemini" || provider === "gemini-acp") return "gemini";
   if (provider === "opencode") return "opencode";
   if (provider === "claude" || provider === "claude-ollama") return "claude";

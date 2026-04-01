@@ -6,6 +6,7 @@ import {
 } from "./implementations/CodexProvider";
 import { GeminiACPProvider } from "./implementations/GeminiACPProvider";
 import { GeminiProvider } from "./implementations/GeminiProvider";
+import { GitHubCopilotProvider } from "./implementations/GitHubCopilotProvider";
 import { OpenCodeProvider } from "./implementations/OpenCodeProvider";
 import type { Provider, ProviderMetadata } from "./types";
 
@@ -16,6 +17,7 @@ const providers: Record<string, Provider> = {
   "gemini-acp": new GeminiACPProvider(),
   codex: new CodexProvider(),
   "codex-oss": new CodexOssProvider(),
+  "github-copilot": new GitHubCopilotProvider(),
   opencode: new OpenCodeProvider(),
 };
 

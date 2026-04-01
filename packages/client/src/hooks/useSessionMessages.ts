@@ -90,7 +90,11 @@ export interface UseSessionMessagesResult {
 }
 
 function isCodexProvider(provider?: string): boolean {
-  return provider === "codex" || provider === "codex-oss";
+  return (
+    provider === "codex" ||
+    provider === "codex-oss" ||
+    provider === "github-copilot"
+  );
 }
 
 function getMessageRole(message: Message): string {

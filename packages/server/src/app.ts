@@ -285,6 +285,7 @@ export function createApp(options: AppOptions): AppResult {
     switch (project.provider) {
       case "codex":
       case "codex-oss":
+      case "github-copilot":
         return getOrCreateReader(
           `codex::${project.sessionDir}::${project.path}`,
           () =>
@@ -550,6 +551,7 @@ export function createApp(options: AppOptions): AppResult {
         switch (process.provider) {
           case "codex":
           case "codex-oss":
+          case "github-copilot":
             return {
               reader: codexReaderFactory(project.path),
               sessionDir: CODEX_SESSIONS_DIR,

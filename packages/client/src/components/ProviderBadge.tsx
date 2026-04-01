@@ -6,6 +6,7 @@ const PROVIDER_COLORS: Record<ProviderName, string> = {
   "claude-ollama": "var(--provider-claude)", // Same as Claude (uses Claude SDK)
   codex: "var(--provider-codex)", // OpenAI green
   "codex-oss": "var(--provider-codex)", // OpenAI green (same as codex)
+  "github-copilot": "var(--provider-codex)", // Copilot uses Codex-compatible harness
   gemini: "var(--provider-gemini)", // Google blue
   "gemini-acp": "var(--provider-gemini)", // Google blue (same as gemini)
   opencode: "var(--provider-opencode)", // OpenCode purple
@@ -16,6 +17,7 @@ const PROVIDER_LABELS: Record<ProviderName, string> = {
   "claude-ollama": "Ollama",
   codex: "Codex",
   "codex-oss": "CodexOSS",
+  "github-copilot": "Copilot",
   gemini: "Gemini",
   "gemini-acp": "Gemini ACP",
   opencode: "OpenCode",

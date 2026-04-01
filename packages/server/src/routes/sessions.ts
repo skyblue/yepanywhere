@@ -91,8 +91,12 @@ function parseOptionalExecutor(rawExecutor: unknown): {
 
 function isCodexProviderName(
   provider: ProviderName | string | undefined,
-): provider is "codex" | "codex-oss" {
-  return provider === "codex" || provider === "codex-oss";
+): provider is "codex" | "codex-oss" | "github-copilot" {
+  return (
+    provider === "codex" ||
+    provider === "codex-oss" ||
+    provider === "github-copilot"
+  );
 }
 
 export interface SessionsDeps {
@@ -266,7 +270,10 @@ function extractContextUsageFromSDKMessages(
     ? resolveContextWindow(model, provider)
     : getModelContextWindow(model, provider);
 
-  const isCodexProvider = provider === "codex" || provider === "codex-oss";
+  const isCodexProvider =
+    provider === "codex" ||
+    provider === "codex-oss" ||
+    provider === "github-copilot";
 
   // Compute compaction overhead for Claude sessions
   const overhead = isCodexProvider

@@ -472,7 +472,7 @@ export class ProjectScanner {
 
     // Determine the session directory based on provider
     let sessionDir: string;
-    if (provider === "codex") {
+    if (provider === "codex" || provider === "github-copilot") {
       sessionDir = CODEX_SESSIONS_DIR;
     } else if (provider === "gemini") {
       sessionDir = GEMINI_TMP_DIR;

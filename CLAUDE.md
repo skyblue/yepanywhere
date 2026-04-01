@@ -80,6 +80,9 @@ Restrict which agent providers and features are available:
 # Only show Claude Code (hide Codex, Gemini, etc.)
 ENABLED_PROVIDERS=claude pnpm dev
 
+# Enable Claude + GitHub Copilot only
+ENABLED_PROVIDERS=claude,github-copilot pnpm dev
+
 # Disable voice input (microphone button)
 VOICE_INPUT=false pnpm dev
 
@@ -88,7 +91,7 @@ ENABLED_PROVIDERS=claude VOICE_INPUT=false PORT=4000 YEP_ANYWHERE_PROFILE=dev pn
 ```
 
 Environment variables:
-- `ENABLED_PROVIDERS` - Comma-separated list of provider names to expose (default: all). Valid names: `claude`, `claude-ollama`, `codex`, `codex-oss`, `gemini`, `gemini-acp`, `opencode`
+- `ENABLED_PROVIDERS` - Comma-separated list of provider names to expose (default: all). Valid names: `claude`, `claude-ollama`, `codex`, `codex-oss`, `github-copilot`, `gemini`, `gemini-acp`, `opencode`
 - `VOICE_INPUT` - Set to `false` to disable the voice input button server-side (default: `true`)
 
 ## Android Emulator Testing

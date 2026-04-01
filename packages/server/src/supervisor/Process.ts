@@ -1366,7 +1366,11 @@ export class Process {
 
     // Codex app-server decline decisions do not currently include a rejection
     // reason in-protocol. Queue the feedback as a follow-up user message.
-    if (response === "deny" && trimmedFeedback && this.provider === "codex") {
+    if (
+      response === "deny" &&
+      trimmedFeedback &&
+      (this.provider === "codex" || this.provider === "github-copilot")
+    ) {
       const queued = this.queueMessage({
         text: `I denied that request. Instead: ${trimmedFeedback}`,
       });
