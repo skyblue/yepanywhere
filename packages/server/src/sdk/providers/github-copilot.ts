@@ -21,6 +21,12 @@ const execAsync = promisify(exec);
 
 export interface GitHubCopilotProviderConfig extends CodexProviderConfig {}
 
+const COPILOT_MODELS: ModelInfo[] = [
+  { id: "claude-sonnet-4.5", name: "Claude Sonnet 4.5" },
+  { id: "claude-sonnet-4", name: "Claude Sonnet 4" },
+  { id: "gpt-5", name: "GPT-5" },
+];
+
 export class GitHubCopilotProvider implements AgentProvider {
   readonly name = "github-copilot" as const;
   readonly displayName = "GitHub Copilot";
@@ -62,7 +68,7 @@ export class GitHubCopilotProvider implements AgentProvider {
   }
 
   async getAvailableModels(): Promise<ModelInfo[]> {
-    return this.delegate.getAvailableModels();
+    return COPILOT_MODELS;
   }
 }
 
